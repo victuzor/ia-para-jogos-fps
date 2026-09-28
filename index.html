@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101923">
+  <title>Agente IA • FPS</title>
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+  <main id="game" aria-label="Protótipo de FPS contra agente de inteligência artificial">
+    <canvas id="view" width="960" height="540" aria-label="Visão em primeira pessoa da arena"></canvas>
+    <div class="vignette" aria-hidden="true"></div>
+    <div id="hitFlash" class="hit-flash" aria-hidden="true"></div>
+    <div class="topbar">
+      <div class="brand"><span class="brand-mark">◈</span> ARENA <span class="brand-light">/ AGENTE IA</span></div>
+      <div class="top-actions"><span id="clock">00:00</span><button id="debugButton" type="button" title="Mostrar depuração (F3)">DEBUG <span id="debugStatus">OFF</span></button></div>
+    </div>
+    <div id="crosshair" class="crosshair" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <div class="hud">
+      <div class="hud-stat health"><span class="hud-label">VIDA</span><span id="health">100</span><div class="track"><div id="healthFill"></div></div></div>
+      <div id="status" class="status" role="status">PATRULHA EM ANDAMENTO</div>
+      <div class="hud-stat ammo"><span class="hud-label">PISTOLA · MUNIÇÃO</span><span><b id="ammo">20</b><small> / ∞</small></span><div class="track"><div id="ammoFill"></div></div></div>
+    </div>
+    <div id="mobileControls" class="mobile-controls" hidden>
+      <div class="dpad"><button data-control="KeyW">▲</button><div><button data-control="KeyA">◀</button><button data-control="KeyS">▼</button><button data-control="KeyD">▶</button></div></div>
+      <div class="touch-actions"><button id="touchReload">RECARREGAR</button><button id="touchFire">ATIRAR</button></div>
+    </div>
+    <section id="menu" class="menu" aria-labelledby="menuTitle">
+      <div class="menu-card">
+        <div class="eyebrow">PROTÓTIPO JOGÁVEL · FPS</div>
+        <h1 id="menuTitle">Contra o <em>agente</em></h1>
+        <p id="menuMessage">Entre na arena. O bot patrulha, escuta seus passos e dispara quando encontra você.</p>
+        <div class="controls"><span><kbd>W A S D</kbd> mover</span><span><kbd>MOUSE</kbd> mirar</span><span><kbd>MOUSE 1</kbd> segurar para atirar</span><span><kbd>R</kbd> recarregar</span><span><kbd>SHIFT</kbd> correr</span><span><kbd>F3</kbd> depurar</span></div>
+        <button id="startButton" class="primary" type="button">INICIAR RODADA <span>→</span></button>
+        <p class="menu-note">Esc pausa o jogo · Toque na tela para mirar em dispositivos móveis</p>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="/src/game.js"></script>
+</body>
+</html>
